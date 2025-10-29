@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visi Misi - Yayasan Kowot Labo Kimbirik Papua</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .auth-buttons {
+      display: flex;
+      gap: 10px;
+      margin-left: 20px;
+    }
+
+    .btn-auth {
+      padding: 8px 18px;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+      border: 2px solid #000;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .btn-daftar {
+      background-color: #fff;
+      color: #000;
+    }
+    .btn-daftar:hover {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .btn-login {
+      background-color: #000;
+      color: #fff;
+    }
+    .btn-login:hover {
+      background-color: #fff;
+      color: #000;
+    }
+
+    @media (max-width: 768px) {
+      .auth-buttons {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">
+    <a href="#beranda">
+      <img src="img/logo.jpg" alt="Logo Yayasan" />
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Beranda</a></li>
+    <li class="dropdown">
+      <a href="#profil">Profil</a>  
+      <ul class="dropdown-menu">
+        <li><a href="index.html">Tentang Kami</a></li> 
+        <li><a href="visi-misi.html">Visi & Misi</a></li> 
+        <li><a href="struktur.html">Struktur Organisasi</a></li>
+        <li><a href="bidang.html">Bidang Program</a></li> 
+        <li><a href="program.html">Program Unggulan</a></li> 
+      </ul>
+    </li>
+
+    <li><a href="index.html">Berita & Artikel</a></li> 
+    <li><a href="index.html">Galeri</a></li> 
+    <li><a href="#kontak">Kontak</a></li>
+  </ul>
+
+  <div class="auth-buttons">
+    <a href="daftar.html" class="btn-auth btn-daftar">Daftar</a>
+    <a href="login.html" class="btn-auth btn-login">Login</a>
+  </div>
+</nav>
+
+<style>
+/* ===== NAVBAR BASE ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar .logo img {
+  height: 50px;
+}
+
+/* NAV LINKS & DROPDOWN */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  color: #111111;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 5px 0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus,
+.nav-links li a:active {
+  color: #b30000;
+  border-bottom: 3px solid #b30000;
+  padding-top: 2px;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  min-width: 220px;
+  padding: 0.5rem 0;
+  z-index: 100;
+  list-style: none;
+  margin: 0;
+}
+
+.dropdown-menu li a {
+  padding: 0.8rem 1rem;
+  display: block;
+  color: #111;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f2f2f2;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Dropdown arrow */
+.dropdown > a::after {
+  content: '';
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  padding: 4px;
+  pointer-events: none;
+}
+
+/* Auth buttons */
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-auth {
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+  border: 2px solid #b30000;
+}
+
+.btn-daftar {
+  background: #fff;
+  color: #b30000;
+}
+
+.btn-daftar:hover {
+  background: #b30000;
+  color: #fff;
+  border-color: #b30000;
+}
+
+.btn-login {
+  background: #b30000;
+  color: #fff;
+  border-color: #b30000;
+}
+
+.btn-login:hover {
+  background: #fff;
+  color: #b30000;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    background: #fff;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 220px;
+    border-radius: 6px;
+    padding: 10px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: none; /* disable hover on mobile */
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .auth-buttons {
+    display: none; /* hide or move inside menu if ingin tampil di mobile */
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    padding: 12px 20px;
+  }
+}
+</style>
+
+<script>
+// Toggle hamburger menu
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+// Toggle dropdown on mobile
+const dropdownLinks = document.querySelectorAll('.nav-links .dropdown > a');
+dropdownLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    if(window.innerWidth <= 992){
+      e.preventDefault();
+      const dropdownMenu = link.nextElementSibling;
+      dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    }
+  });
+});
+</script>
+
+<!-- HERO -->
+<section class="hero" id="beranda">
+  <div class="slideshow-container">
+    <div class="slide"><img src="img/banner1.jpg" alt="Slide 1" class="hero-img" /></div>
+    <div class="slide"><img src="img/banner2.jpg" alt="Slide 2" class="hero-img" /></div>
+    <div class="slide"><img src="img/banner3.jpeg" alt="Slide 3" class="hero-img" /></div>
+
+    <div class="hero-content">
+      <h1><span class="underline">Selamat Datang Di Website<br>Yayasan Kowot Labo Kimbirik Papua</span></h1>
+      <p class="subtext">Membina Generasi Papua untuk Masa Depan Lebih Baik</p>
+    </div>
+  </div>
+</section>
+
+<section class="visi-misi-section center-text">
+  <div class="section-header">
+    <h2>Visi & Misi</h2>
+    <p class="section-subtitle">
+      Komitmen kami untuk membangun Papua yang cerdas, beriman, dan mandiri.
+    </p>
+  </div>
+
+  <div class="card-container">
+    <div class="card card-visi">
+      <div class="icon">🎯</div>
+      <h3>Visi</h3>
+      <p>
+        Menjadi yayasan yang mendorong transformasi masyarakat Papua secara menyeluruh melalui akses pendidikan yang inklusif, pengembangan kepemimpinan berkarakter, dan pelayanan sosial serta kemanusiaan yang berkelanjutan, guna membentuk generasi Papua yang cerdas, beriman, mandiri, dan mampu bersaing di tingkat lokal maupun global.
+      </p>
+    </div>
+
+    <div class="card card-misi">
+      <div class="icon">🚀</div>
+      <h3>Misi</h3>
+      <ul>
+        <li>Meningkatkan akses pendidikan di wilayah pedalaman Papua.</li>
+        <li>Mengembangkan kepemimpinan pemuda yang berintegritas.</li>
+        <li>Menjalin kerja sama dengan lembaga lokal dan nasional.</li>
+        <li>Memberikan pendampingan sosial berbasis komunitas.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<br> 
+
+<section class="tujuan-section center-text" id="tujuan">
+  <div class="section-header">
+    <h2>Tujuan Yayasan</h2>
+    <p> 
+      Langkah nyata kami dalam menciptakan perubahan yang berdampak.
+    </p>
+  </div>
+
+  <div class="tujuan-grid">
+    <div class="tujuan-item">
+      <h4>Pemberdayaan Masyarakat</h4>
+      <p>Memberikan akses pendidikan dan pelatihan kepada masyarakat di wilayah terpencil Papua.</p>
+    </div>
+    <div class="tujuan-item">
+      <h4>Kaderisasi Pemuda</h4>
+      <p>Membina generasi muda yang memiliki integritas, kepemimpinan, dan semangat pelayanan.</p>
+    </div>
+    <div class="tujuan-item">
+      <h4>Kolaborasi Lintas Lembaga</h4>
+      <p>Membangun kemitraan strategis dengan gereja, pemerintah, dan lembaga sosial lainnya.</p>
+    </div>
+    <div class="tujuan-item tujuan-wide">
+      <h4>Peningkatan Kualitas Hidup</h4>
+      <p>Mendorong kesejahteraan masyarakat melalui program sosial, kesehatan, dan keagamaan.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+.visi-misi-section {
+  padding: 60px 20px;
+  background-color: #f4f4f4;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-size: 2.4rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.section-header p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  flex: 1 1 300px;
+  max-width: 500px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.card .icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 22px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.card p, .card ul {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.card ul {
+  padding-left: 20px;
+}
+
+.card ul li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 18px;
+}
+
+.card ul li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* ===== TUJUAN ===== */
+.tujuan-section {
+  padding: 60px 20px;
+  background-color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.tujuan-section .section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.tujuan-section .section-header h2 {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.tujuan-section .section-header p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.tujuan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tujuan-item {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 25px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tujuan-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.tujuan-item h4 {
+  font-size: 18px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.tujuan-item p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.tujuan-item.tujuan-wide {
+  grid-column: 1 / -1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card, .tujuan-item.tujuan-wide {
+    max-width: 90%;
+  }
+
+  .tujuan-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 4000);
+  }
+</script>
+
+<section class="kontak-section" id="kontak">
+  <div class="kontak-container">
+    <div class="kontak-left">
+      <div class="kontak-header">
+        <h4>Hubungi Kami</h4>
+      </div><br>
+      <div class="kontak-info">
+        <p class="yayasan">Yayasan Kowot Labo Kimbirik Papua</p>
+        <p><i class="fas fa-map-marker-alt"></i> Jl. Papua No. 123, Jayapura, Papua</p>
+        <p><i class="fas fa-phone-alt"></i> +62 812 3456 7890</p>
+        <p><i class="fas fa-envelope"></i> info@yayasankowotlabo.org</p>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+
+    <div class="kontak-right">
+      <div class="map-container">
+        <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127568.14762524907!2d140.6373325!3d-2.53371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x686d53b63eec1615%3A0x2d82f09ecbb77a7f!2sJayapura%2C%20Papua!5e0!3m2!1sid!2sid!4v1690000000000!5m2!1sid!2sid"
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>&copy; 2025 Yayasan Kowot Labo Kimbirik Papua. All rights reserved.</p>
+</footer>
+
+<style>
+/* ===== KONTAK SECTION ===== */
+.kontak-section {
+  padding: 60px 20px;
+  background-color: #2c3e50; /* Sama dengan footer */
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+.kontak-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-in-out;
+}
+
+.kontak-container.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.kontak-left, .kontak-right {
+  flex: 1 1 400px;
+  min-width: 300px;
+}
+
+.kontak-header h4 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+/* Hapus card, teks langsung di background */
+.kontak-info {
+  padding: 0;
+  margin: 0;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.kontak-info p {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #fff; /* Ubah teks hijau menjadi putih */
+}
+
+.kontak-info .yayasan {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.kontak-info i {
+  margin-right: 8px;
+  color: #fff;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 22px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #f1c40f;
+}
+
+/* MAP */
+.map-container {
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* FOOTER */
+.footer {
+  background-color: #2c3e50;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 14px;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .kontak-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .kontak-left, .kontak-right {
+    max-width: 90%;
+  }
+
+  .map-container {
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .kontak-header h4 {
+    font-size: 22px;
+  }
+
+  .kontak-info p {
+    font-size: 14px;
+  }
+
+  .social-icons a {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  .map-container {
+    height: 200px;
+  }
+}
+</style>
+
+<script>
+// Fade-in saat scroll
+window.addEventListener('scroll', function() {
+  const kontak = document.querySelector('.kontak-container');
+  const kontTop = kontak.getBoundingClientRect().top;
+  const screenHeight = window.innerHeight;
+
+  if (kontTop < screenHeight - 100) {
+    kontak.classList.add('active');
+  }
+});
+</script>
